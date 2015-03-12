@@ -9,6 +9,7 @@ func TestLoadConfig(t *testing.T) {
 	cfg, err := LoadConfig("../resources/sampleconfig.yml")
 	if err != nil {
 		t.Errorf("Error : %v", err)
+		return
 	}
 
 	fmt.Println(cfg)
@@ -18,6 +19,7 @@ func TestSaveConfig(t *testing.T) {
 	cfg, err := LoadConfig("../resources/sampleconfig.yml")
 	if err != nil {
 		t.Errorf("Error: %v", err)
+		return
 	}
 
 	cfg.Name = "Modified Container"

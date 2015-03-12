@@ -5,18 +5,17 @@ import (
 	_ "log"
 )
 
-
-func (c *ContainerConfig) Verify() bool {
+func (c *Container) Verify() bool {
 	fmt.Println("Inside Docker Verify")
 	return true
 }
 
-func (c *ContainerConfig) Test() bool {
+func (c *Container) Test() bool {
 	fmt.Println("Inside Docker Test")
 	return true
 }
 
-func (c *ContainerConfig) Create() bool {
+func (c *Container) Create() bool {
 	fmt.Println("Inside Docker Create")
 	return true
 }

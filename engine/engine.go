@@ -1,5 +1,7 @@
 package engine
 
+import "github.com/umbrellaops/ubuild/lib"
+
 // A ContainerEngine is engine object
 //
 // This engine will be responsible to perform various
@@ -16,27 +18,8 @@ type ContainerEngine interface {
 	Create() bool
 }
 
-// Json representation of config file for genric container 
-type ContainerConfig struct {
-	Name        string               `yaml:"name"`
-	Builder     BuilderS             `yaml:"builder"`
-	Attributes  ContainerAttributesS `yaml:"container-attrib"`
-	Provisioner []ProvisionerS       `yaml:"provisioner"`
-}
-
-type ContainerAttributesS struct {
-	Base    string   `yaml:"base-image"`
-	Env     []string `yaml:"env"`
-	WorkDir string   `yaml:"work-dir"`
-	Cmd     string   `yaml:"cmd"`
-}
-
-type ProvisionerS struct {
-	Type string   `yaml:"type"`
-	Run []string `yaml:"run"`
-}
-
-type BuilderS struct {
-	Type string            `yaml:"type"`
-	Attr map[string]string `yaml:"attr"`
+// Json representation of config file for genric container
+type Container struct {
+	ID     string
+	Config *parser.ContainerConfig
 }

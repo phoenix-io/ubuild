@@ -48,7 +48,7 @@ func main() {
 // using engine Interface
 func verifyJSON(c *cli.Context) bool {
 	var container engine.ContainerEngine
-	container = &engine.ContainerConfig{Name:"Test Container"}
+	container = &engine.Container{ID:"3242342"}
 	container.Verify()
 	return false
 }
