@@ -1,0 +1,25 @@
+---
+name: "test container" 
+builder: 
+  type: docker
+  attr: 
+    abc: "123"
+    xyz: "456"
+container-attrib: 
+  base: ubuntu32
+  cmd: /bin/bash
+  work-dir: /home/
+  env: 
+    - "export http_proxy=\"192.168.0.1:8080\""
+    - "export GOPATH=\"/local/lib/golib\""
+provisioner: 
+  - 
+    type: shell
+    run: 
+        - "sudo apt-get install httpd"
+        - "echo \"hello\" > ./test.cfg"
+  - 
+    type: ansible
+    run:
+        - "ansible all -m ping --ask-pass"
+

@@ -18,25 +18,25 @@ type ContainerEngine interface {
 
 // Json representation of config file for genric container 
 type ContainerConfig struct {
-	Name        string               `json:"name"`
-	Builder     BuilderS             `json:"builder"`
-	Attributes  ContainerAttributesS `json:"container-attrib"`
-	Provisioner []ProvisionerS       `json:"provisioner"`
+	Name        string               `yaml:"name"`
+	Builder     BuilderS             `yaml:"builder"`
+	Attributes  ContainerAttributesS `yaml:"container-attrib"`
+	Provisioner []ProvisionerS       `yaml:"provisioner"`
 }
 
 type ContainerAttributesS struct {
-	Base    string   `json:"base-image"`
-	Env     []string `json:"env"`
-	WorkDir string   `json:"work-dir"`
-	Cmd     string   `json:"cmd"`
+	Base    string   `yaml:"base-image"`
+	Env     []string `yaml:"env"`
+	WorkDir string   `yaml:"work-dir"`
+	Cmd     string   `yaml:"cmd"`
 }
 
 type ProvisionerS struct {
-	Type string   `json:"type"`
-	Run  []string `json:"run"`
+	Type string   `yaml:"type"`
+	Run []string `yaml:"run"`
 }
 
 type BuilderS struct {
-	Type string            `json:"type"`
-	Attr map[string]string `json:"attr"`
+	Type string            `yaml:"type"`
+	Attr map[string]string `yaml:"attr"`
 }
